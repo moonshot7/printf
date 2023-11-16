@@ -1,46 +1,4 @@
-convert_number.c: In function ‘print_octal’:
-convert_number.c:58:1: error: version control conflict marker in file
-   58 | <<<<<<< HEAD
-      | ^~~~~~~
-convert_number.c:60:1: error: version control conflict marker in file
-   60 | =======
-      | ^~~~~~~
-convert_number.c:62:2: error: ISO C90 forbids mixed declarations and code [-Werror=declaration-after-statement]
-   62 |  int c = 0;
-      |  ^~~
-convert_number.c:63:1: error: version control conflict marker in file
-   63 | >>>>>>> 95c887b2b84a8904515f5d09bcac5956bb20a05a
-      | ^~~~~~~
-convert_number.c:63:9: error: invalid suffix "c887b2b84a8904515f5d09bcac5956bb20a05a" on integer constant
-   63 | >>>>>>> 95c887b2b84a8904515f5d09bcac5956bb20a05a
-      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-convert_number.c:67:2: error: ‘else’ without a previous ‘if’
-   67 |  else if (params->h_modifier)
-      |  ^~~~
-convert_number.c:72:2: error: ‘str’ undeclared (first use in this function)
-   72 |  str = convert(l, 8, CONVERT_UNSIGNED, params);
-      |  ^~~
-convert_number.c:72:2: note: each undeclared identifier is reported only once for each function it appears in
-convert_number.c:81:27: error: ‘returnspec’ undeclared (first use in this function)
-   81 |  print_number_right_shift(returnspec, str, value);
-      |                           ^~~~~~~~~~
-convert_number.c:81:44: error: ‘value’ undeclared (first use in this function)
-   81 |  print_number_right_shift(returnspec, str, value);
-      |                                            ^~~~~
-convert_number.c:81:2: error: too many arguments to function ‘print_number_right_shift’
-   81 |  print_number_right_shift(returnspec, str, value);
-      |  ^~~~~~~~~~~~~~~~~~~~~~~~
-In file included from convert_number.c:1:
-main.h:105:5: note: declared here
-  105 | int print_number_right_shift(char *str, params_t *params);
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~
-convert_number.c:62:6: error: unused variable ‘c’ [-Werror=unused-variable]
-   62 |  int c = 0;
-      |      ^
-convert_number.c:83:1: error: control reaches end of non-void function [-Werror=return-type]
-   83 | }
-      | ^
-cc1: all warnings being treated as errors
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 number.c:1:10: fatal error: main.h: No such file or directory
     1 | #include <main.h>
       |          ^~~~~~~~
@@ -51,19 +9,9 @@ printf.c:18:7: error: nonnull argument ‘format’ compared to NULL [-Werror=no
       |       ^
 cc1: all warnings being treated as errors
 print_functions.c: In function ‘print_int’:
-print_functions.c:39:27: error: ‘returnspec’ undeclared (first use in this function)
-   39 |  print_number_right_shift(returnspec, str, value);
-      |                           ^~~~~~~~~~
-print_functions.c:39:27: note: each undeclared identifier is reported only once for each function it appears in
-print_functions.c:39:39: error: ‘str’ undeclared (first use in this function)
-   39 |  print_number_right_shift(returnspec, str, value);
-      |                                       ^~~
-print_functions.c:39:44: error: ‘value’ undeclared (first use in this function)
-   39 |  print_number_right_shift(returnspec, str, value);
-      |                                            ^~~~~
-print_functions.c:39:2: error: too many arguments to function ‘print_number_right_shift’
-   39 |  print_number_right_shift(returnspec, str, value);
-      |  ^~~~~~~~~~~~~~~~~~~~~~~~
+print_functions.c:41:5: error: too few arguments to function ‘print_number_right_shift’
+   41 |     print_number_right_shift(/* appropriate arguments */);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
 In file included from print_functions.c:1:
 main.h:105:5: note: declared here
   105 | int print_number_right_shift(char *str, params_t *params);
@@ -78,5 +26,4 @@ cc1: all warnings being treated as errors
 simple_printers.c:1:9: fatal error: main.h: No such file or directory
     1 | #include<main.h>
       |         ^~~~~~~~
-compilation terminated.
 

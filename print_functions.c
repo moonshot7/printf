@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * print_char - prints character
  * @ap: argument pointer
@@ -29,12 +30,13 @@ int print_int(va_list ap, params_t *params)
 {
 	long l;
 
-	if (params->1_modifier)
-		l = va_arg(ap, long);
+	if (params->l_modifier)
+	l = va_arg(ap, long);
 	else if (params->h_modifier)
-		l = (short int)va_arg(ap, int);
+	l = (short int)va_arg(ap, int);
 	else
-		l = (int)va_arg(ap, int);
+	l = (int)va_arg(ap, int);
+	print_number_right_shift(returnspec, str, value);
 	return (print_number(convert(l, 10, 0, params), params));
 }
 
@@ -103,23 +105,25 @@ int print_s(va_list ap, params_t *params)
 	char *hex;
 	int sum = 0;
 
-	if ((int)(!str))
-		return (_puts(NULL_STRING));
-	for (; *str; str++)
-	{
-		if ((*str > 0 && *str < 32) || *str >= 127)
-		{
-			sum += _putchar('\\');
-			sum += _ putchar('x');
-			hex = convert(*str, 16, 0, params);
-			if (!hex[1])
-				sum += _putchar('0');
-			sum += _puts(hex);
-		}
-		else
-		{
-			sum += _putchar(*str);
-		}
-	}
-	return (sum);
+if (!str)
+return (_puts(NULL_STRING));
+for (; *str; str++)
+{
+if ((*str > 0 && *str < 32) || *str >= 127)
+{
+sum += _putchar('\\');
+sum += _putchar('x');
+hex = convert(*str, 16, 0, params);
+if (!hex[1])
+{
+sum += _putchar('0');
+sum += _puts(hex);
+}
+}
+else
+{
+sum += _putchar(*str);
+}
+}
+return (sum);
 }

@@ -55,7 +55,12 @@ int print_binary(va_list ap, params_t *params)
 int print_octal(va_list ap, params_t *params)
 {
 	unsigned long l;
+<<<<<<< HEAD
 	char *str;
+=======
+	char str;
+	int c = 0;
+>>>>>>> 95c887b2b84a8904515f5d09bcac5956bb20a05a
 
 	if (params->l_modifier)
 	l = (unsigned long)va_arg(ap, unsigned long);

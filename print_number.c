@@ -30,7 +30,7 @@ return (i);
 *@params: the parameter struct
 *Return: chars printed
 */
-intprint_number(char* str, params_t *params)
+int print_number(char* str, params_t *params)
 {
 unsigned int i = _strlen(str);
 
@@ -101,7 +101,7 @@ return (n);
 *@params: the parameter struct
 *Return: chars printed
 */
-intprint_number_left_shift(char* str, params_t *params)
+int print_number_left_shift(char* str, params_t *params)
 {
 unsigned int n = 0, neg, neg2, i = _strlen(str);
 char pad_char = ' ';

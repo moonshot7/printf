@@ -1,4 +1,4 @@
-#include <main.h>
+#include"main.h"
 
 
 /**
@@ -45,8 +45,7 @@ char *convert(long int num, int base, int flags, params_t *params)
  */
 int print_unsigned (va_list ap, params_t *params)
 {
-	unsigned long l
-		;
+	unsigned long l;
 	if (params->l_modifier)
 		l = (unsigned long)va_arg(ap, unsigned long);
 	else if (params->h_modifier)
@@ -54,7 +53,8 @@ int print_unsigned (va_list ap, params_t *params)
 	else
 		l = (unsigned int)va_arg(ap, unsigned int);
 	params->unsign = 1;
-	return (print_number(convert(1,  10,  CONVERT_UNSIGNED,  params),  params));
+	return (print_number(convert(l, 10, CONVERT_UNSIGNED, params), params));
+
 }
 
 /**
@@ -63,7 +63,7 @@ int print_unsigned (va_list ap, params_t *params)
  * @params: the parameters struct
  * Return: bytes printed
  */
-int print_adress(va_list ap, param_t *params)
+int print_adress(va_list ap, params_t *params)
 {
 	unsigned long int n = va_arg(ap, unsigned long int);
 	char *str;

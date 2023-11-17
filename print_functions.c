@@ -36,11 +36,7 @@ int print_int(va_list ap, params_t *params)
         l = (short int)va_arg(ap, int);
     else
         l = (int)va_arg(ap, int);
-    
-    
-    print_number_right_shift(/* appropriate arguments */);
-
-    return print_number(convert(l, 10, 0, params), params);
+    return (print_number(convert(l, 10, 0, params), params));
 }
 
 /**
